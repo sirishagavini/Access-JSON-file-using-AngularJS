@@ -1,0 +1,78 @@
+<!DOCTYPE html >
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+
+<body ng-app="myDessertApp"  ng-controller="dessertController" >
+  <div style="padding-top: 2%; height: 100%;">
+<!--       <div data-ng-init="onloadFun()"> -->
+    <table class="col-xs-12">
+      <tr class="col-xs-12">
+        <td class="col-xs-2">
+          <div style="padding-top: 10%;align-content: left;">
+<!--            <div class="form-group has-feedback">-->
+<!--    <span style="padding-right:90%;" class="glyphicon glyphicon-search form-control-feedback"></span>-->
+<!--    <input style="width:250px;border-radius: 10px;height: 30px; text-align:center;" type="text" placeholder="search" class="form-control" />-->
+<!--    <span class="glyphicon glyphicon-remove form-control-feedback"></span>-->
+<!--</div>-->
+          </div>
+        </td>
+     <td class="col-xs-10" style="padding-top: 2%;text-align: right;">
+          <!--<div style="align-content: right;"> <span>{{user}}</span>-->
+          <!--  <i style="font-size:40px;color: #555555;" class="glyphicon glyphicon-user"></i></div>-->
+        </td>
+      </tr>
+      <tr class="col-xs-12">
+        <td style="vertical-align:top;" class="col-xs-3">
+          <div>
+            <table class="sideTable" style="border-color: yellow;">
+              <tr>
+                <td ng-repeat="dessert in dessertList">
+                  <div style="font-size: 30px;cursor:pointer; color:pink" ng-click="showDessert($index)"> <img src={{dessert.nameImg}} style="width:130px;height:130px;">
+                  <span style="text-align: center;" class="glyphicon glyphicon-arrow-down"></span></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </td>
+        </tr>
+        <tr>
+        <td style="vertical-align: top;" class="col-xs-7">
+          <div class="col-xs-12" style="padding-top: 2%;">
+           <table>
+             <tr> <td><span><img src={{dessertImg}}  style="width:150px;height:152px;"> </span>
+            </td>
+            </tr>
+            <tr> <td colspan="2">{{Recipe}}</td> </tr>
+            </table>
+          </div>
+          <br>
+          <div class="col-xs-12" style="padding-top:2%;">
+            <table class="downTable" style=width:100%;">
+              <tr>
+                <th>Ingredients</th>
+                <th>Quantity</th>
+                <th>Measurement</th>
+              </tr>
+              <tr ng-repeat="eachIng in Ingredients">
+                <td>{{eachIng.eachItem}} </td>
+                <td> {{eachIng.eachQuantity}}</td>
+                <td> {{eachIng.eachMeasures}}</td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
