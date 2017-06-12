@@ -1,0 +1,19 @@
+/* Styles go here */
+
+input[type=text]:focus {
+    width: 100%;
+}
+.sideTable td {
+  border: none;
+  padding: 50px;
+  border-style: outset;
+}
+
+.downTable th,  .downTable td {
+  border: 1px solid purple;
+  border-collapse: collapse;
+  padding: 10px;
+}
+.downTable tr:nth-child(even) {
+    background-color: pink;
+}
